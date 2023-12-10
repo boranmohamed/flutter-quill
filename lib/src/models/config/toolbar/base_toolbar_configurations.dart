@@ -20,6 +20,9 @@ class QuillBaseToolbarConfigurations extends QuillSharedToolbarProperties {
     super.linkDialogAction,
     super.multiRowsDisplay = true,
     super.decoration,
+    super.height,
+    super.width,
+
 
     /// Note this only used when you using the quill toolbar buttons like
     /// `QuillToolbarHistoryButton` inside it

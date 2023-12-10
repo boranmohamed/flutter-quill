@@ -119,6 +119,8 @@ class QuillToolbarConfigurations extends QuillSharedToolbarProperties {
     this.dialogTheme,
     super.axis = Axis.horizontal,
     super.color,
+    super.height,
+    super.width,
     super.sectionDividerColor,
     super.sectionDividerSpace,
     this.spacerWidget,
