@@ -121,6 +121,7 @@ class QuillToolbarConfigurations extends QuillSharedToolbarProperties {
     super.color,
     super.height,
     super.width,
+    super.padding,
     super.sectionDividerColor,
     super.sectionDividerSpace,
     this.spacerWidget,
