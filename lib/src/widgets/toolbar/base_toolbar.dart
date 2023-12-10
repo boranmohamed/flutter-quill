@@ -62,7 +62,7 @@ class QuillBaseToolbar extends StatelessWidget implements PreferredSizeWidget {
                     ),
                 height: configurations.height ?? (configurations.axis == Axis.horizontal ? toolbarSize : null),
                 width: configurations.width ?? (configurations.axis == Axis.vertical ? toolbarSize : null),
-                padding: configurations.padding,
+                padding: configurations.toolBarPadding,
                 child: Wrap(
                   direction: configurations.axis,
                   alignment: configurations.toolbarIconAlignment,
