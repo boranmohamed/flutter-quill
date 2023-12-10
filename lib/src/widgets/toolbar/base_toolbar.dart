@@ -69,12 +69,14 @@ class QuillBaseToolbar extends StatelessWidget implements PreferredSizeWidget {
                     color:
                         configurations.color ?? Theme.of(context).canvasColor,
                   ),
-              constraints: BoxConstraints.tightFor(
-                height:
-                    configurations.axis == Axis.horizontal ? toolbarSize : null,
-                width:
-                    configurations.axis == Axis.vertical ? toolbarSize : null,
-              ),
+              // constraints: BoxConstraints.tightFor(
+              //   height:
+              //       configurations.axis == Axis.horizontal ? toolbarSize : null,
+              //   width:
+              //       configurations.axis == Axis.vertical ? toolbarSize : null,
+              // ),
+              height: configurations.height ?? (configurations.axis == Axis.horizontal ? toolbarSize : null),
+              width: configurations.width ?? (configurations.axis == Axis.vertical ? toolbarSize : null),
               child: QuillToolbarArrowIndicatedButtonList(
                 axis: configurations.axis,
                 buttons: configurations.childrenBuilder(context),

@@ -20,8 +20,12 @@ abstract class QuillSharedToolbarProperties extends Equatable {
     this.multiRowsDisplay = true,
     this.decoration,
     this.buttonOptions = const QuillToolbarButtonOptions(),
+    this.width ,
+    this.height
   });
   final Axis axis;
+  final double? height;
+  final double? width;
   final double toolbarSectionSpacing;
   final WrapAlignment toolbarIconAlignment;
   final WrapCrossAlignment toolbarIconCrossAlignment;
