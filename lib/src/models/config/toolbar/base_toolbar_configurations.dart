@@ -22,6 +22,7 @@ class QuillBaseToolbarConfigurations extends QuillSharedToolbarProperties {
     super.decoration,
     super.height,
     super.width,
+    super.padding,
 
 
     /// Note this only used when you using the quill toolbar buttons like

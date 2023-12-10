@@ -65,6 +65,7 @@ class QuillToolbar extends StatelessWidget implements PreferredSizeWidget {
           toolbarSize: configurations.toolbarSize,
           height: configurations.height,
           width: configurations.width,
+
           childrenBuilder: (context) {
             final toolbarConfigurations =
                 context.requireQuillToolbarConfigurations;

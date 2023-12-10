@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart'
-    show Axis, Color, Decoration, WrapAlignment, WrapCrossAlignment;
+    show Axis, Color, Decoration, EdgeInsetsGeometry, WrapAlignment, WrapCrossAlignment;
 
 import '../../../widgets/toolbar/base_toolbar.dart';
 import '../../structs/link_dialog_action.dart';
@@ -21,11 +21,13 @@ abstract class QuillSharedToolbarProperties extends Equatable {
     this.decoration,
     this.buttonOptions = const QuillToolbarButtonOptions(),
     this.width ,
-    this.height
+    this.height,
+    this.padding
   });
   final Axis axis;
   final double? height;
   final double? width;
+  final EdgeInsetsGeometry? padding;
   final double toolbarSectionSpacing;
   final WrapAlignment toolbarIconAlignment;
   final WrapCrossAlignment toolbarIconCrossAlignment;
