@@ -54,13 +54,22 @@ class QuillBaseToolbar extends StatelessWidget implements PreferredSizeWidget {
         child: Builder(
           builder: (context) {
             if (configurations.multiRowsDisplay) {
-              return Wrap(
-                direction: configurations.axis,
-                alignment: configurations.toolbarIconAlignment,
-                crossAxisAlignment: configurations.toolbarIconCrossAlignment,
-                runSpacing: 4,
-                spacing: configurations.toolbarSectionSpacing,
-                children: configurations.childrenBuilder(context),
+              return Container(
+                decoration: configurations.decoration ??
+                    BoxDecoration(
+                      color:
+                      configurations.color ?? Theme.of(context).canvasColor,
+                    ),
+                height: configurations.height ?? (configurations.axis == Axis.horizontal ? toolbarSize : null),
+                width: configurations.width ?? (configurations.axis == Axis.vertical ? toolbarSize : null),
+                child: Wrap(
+                  direction: configurations.axis,
+                  alignment: configurations.toolbarIconAlignment,
+                  crossAxisAlignment: configurations.toolbarIconCrossAlignment,
+                  runSpacing: 4,
+                  spacing: configurations.toolbarSectionSpacing,
+                  children: configurations.childrenBuilder(context),
+                ),
               );
             }
             return Container(
