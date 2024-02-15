@@ -1,33 +1,36 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart'
-    show Axis, Color, Decoration, WrapAlignment, WrapCrossAlignment;
+    show Axis, Color, Decoration, EdgeInsetsGeometry, WrapAlignment, WrapCrossAlignment;
 
 import '../../../widgets/toolbar/base_toolbar.dart';
 import '../../structs/link_dialog_action.dart';
-import '../quill_shared_configurations.dart';
 
 abstract class QuillSharedToolbarProperties extends Equatable {
   const QuillSharedToolbarProperties({
-    this.sharedConfigurations = const QuillSharedConfigurations(),
     this.toolbarSize,
     this.axis = Axis.horizontal,
     this.toolbarSectionSpacing = kToolbarSectionSpacing,
     this.toolbarIconAlignment = WrapAlignment.center,
     this.toolbarIconCrossAlignment = WrapCrossAlignment.center,
     this.color,
+    this.customButtons = const [],
     this.sectionDividerColor,
     this.sectionDividerSpace,
     this.linkDialogAction,
     this.multiRowsDisplay = true,
     this.decoration,
-    this.buttonOptions = const QuillSimpleToolbarButtonOptions(),
-    this.toolbarRunSpacing = 4,
+    this.buttonOptions = const QuillToolbarButtonOptions(),
+    this.width ,
+    this.height,
+    this.toolBarPadding
   });
   final Axis axis;
+  final double? height;
+  final double? width;
+  final EdgeInsetsGeometry? toolBarPadding;
   final double toolbarSectionSpacing;
   final WrapAlignment toolbarIconAlignment;
   final WrapCrossAlignment toolbarIconCrossAlignment;
-  final double toolbarRunSpacing;
   final double? toolbarSize;
 
   // Overrides the action in the _LinkDialog widget
@@ -38,6 +41,9 @@ abstract class QuillSharedToolbarProperties extends Equatable {
   /// Defaults to [ThemeData.canvasColor] of the current [Theme] if no color
   /// is given.
   final Color? color;
+
+  /// List of custom buttons
+  final List<QuillToolbarCustomButtonOptions> customButtons;
 
   /// The color to use when painting the toolbar section divider.
   ///
@@ -56,7 +62,5 @@ abstract class QuillSharedToolbarProperties extends Equatable {
 
   /// If you want change spesefic buttons or all of them
   /// then you came to the right place
-  final QuillSimpleToolbarButtonOptions buttonOptions;
-
-  final QuillSharedConfigurations sharedConfigurations;
+  final QuillToolbarButtonOptions buttonOptions;
 }
